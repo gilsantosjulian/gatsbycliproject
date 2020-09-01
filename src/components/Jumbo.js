@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyledJumbo } from '../../../Gatsby-platzi/src/styles/components'
+import { StyledJumbo } from '../styles/components'
 
 export default function Jumbo() {
   return (
@@ -11,5 +11,3 @@ export default function Jumbo() {
     </StyledJumbo>
   )
 }
-
-const styles = StyleSheet.create({})
