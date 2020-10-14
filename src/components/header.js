@@ -3,11 +3,14 @@ import PropTypes from "prop-types"
 import React from "react"
 import { MenuItem, StyledHeader } from '../styles/components'
 
+const logoImg = 'https://i.postimg.cc/6q3pg48v/Logo.png'
+const cartImg = 'http://i.postimg.cc/L6wpMxLt/cart.png'
+
 const Header = () => (
   <StyledHeader>
     <Link to='/'>
       <img 
-        src='https://i.postimg.cc/6q3pg48v/Logo.png' 
+        src={logoImg}
         alt='logo swag'
       />
     </Link>
@@ -23,7 +26,7 @@ const Header = () => (
           <Link to='/cart'>
             <span>
               <img 
-                src='http://i.postimg.cc/L6wpMxLt/cart.png' 
+                src={cartImg}
                 alt='cartLogo' 
               />
             </span>
