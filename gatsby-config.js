@@ -39,12 +39,13 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-stripe`,
-      options: {
-        opbejcts: ['Sku'],
-        secretKey: process.env.STRIPE_SK
-      },
+    resolve: `gatsby-source-stripe`,
+    options: {
+      objects: ['Balance', 'BalanceTransaction', 'Product', 'ApplicationFee', 'Sku', 'Subscription', 'Price'],
+      secretKey: process.env.STRIPE_SK,
+      downloadFiles: true,
     }
+  }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
