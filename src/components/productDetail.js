@@ -8,7 +8,7 @@ import {
   QtySelect,
 } from '../styles/components'
 
-import { SEO } from './'
+import { SEO, Stars } from './'
 
 export default function productDetail({ 
   id, 
@@ -26,6 +26,7 @@ export default function productDetail({
         <Tag>Popular</Tag>
         <h2>{name}</h2>
         <b>USD {price}</b>
+        <Stars />
         {
           metadata.wear && (
             <SizeSelect selecter={size}>
