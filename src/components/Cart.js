@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { Link } from 'gatsby'
 import { Button, StyledCart } from '../styles/components'
-import { priceFormat } from '../utils/priceFormat'
+import priceFormat from '../utils/priceFormat'
 import { CartContext } from '../context'
 
 export default function Cart() {
@@ -24,9 +24,9 @@ export default function Cart() {
               <td>
                 <img src={swag.metadata.img} alt={swag.name}/>{swag.name}
               </td>
-              <td>USD {priceFormat(swag.unit_amount)}</td>
+              <td>USD {swag.price}</td>
               <td>{swag.quantity}</td>
-              <td>{priceFormat(swag.quantity * swag.unit_amount)}</td>
+              <td>{swag.quantity * swag.price}</td>
             </tr>
           ))
         }
