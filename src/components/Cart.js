@@ -24,9 +24,9 @@ export default function Cart() {
               <td>
                 <img src={swag.metadata.img} alt={swag.name}/>{swag.name}
               </td>
-              <td>USD {swag.price}</td>
+              <td>USD {priceFormat(swag.unit_amount)}</td>
               <td>{swag.quantity}</td>
-              <td>{swag.quantity * swag.price}</td>
+              <td>{priceFormat(swag.quantity * swag.unit_amount)}</td>
             </tr>
           ))
         }
