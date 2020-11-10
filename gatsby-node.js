@@ -5,11 +5,11 @@ exports.createPages = async({graphql, actions}) => {
   const productTemplate = path.resolve(`src/templates/Product.js`)
   const result = await graphql(`
     query GET_PRICES {
-      allStripePrice {
+      allStripeSku: allStripePrice {
         edges {
           node {
             id
-            unit_amount
+            price: unit_amount
             product {
               name 
               metadata {
@@ -29,7 +29,7 @@ exports.createPages = async({graphql, actions}) => {
     throw result.errors
   }
 
-  result.data.allStripePrice.edges.forEach(({node}) => {
+  result.data.allStripeSku.edges.forEach(({node}) => {
     createPage({
       path: `${node.id}`,
       component: productTemplate,
