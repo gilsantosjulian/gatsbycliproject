@@ -10,7 +10,7 @@ export default function Product({products}) {
       <section>
         {
           products.map(({node}) => {
-            const price = priceFormat(node.unit_amount);
+            const price = priceFormat(node.price);
             return (
               <article key={node.id}>
                 <img src={node.product.metadata.img} alt={node.product.name}/>

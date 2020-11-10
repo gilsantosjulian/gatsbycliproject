@@ -14,16 +14,16 @@ import { SEO, Stars } from './'
 
 export default function productDetail({ 
   id, 
-  unit_amount, 
+  price, 
   product: { name, metadata },
 }) {
-  const price = priceFormat(unit_amount)
+  const productPrice = priceFormat(price)
   const [size, setSize] = useState(2)
   const [qty, setQty] = useState(1)
   const {addToCart} = useContext(CartContext)
 
   const handleSubmit = () => {
-    addToCart({unit_amount, sku: id, name, metadata, quantity: qty})
+    addToCart({price, sku: id, name, metadata, quantity: qty})
   }
 
   return (
@@ -33,7 +33,7 @@ export default function productDetail({
       <div>
         <Tag>Popular</Tag>
         <h2>{name}</h2>
-        <b>USD {price}</b>
+        <b>USD {productPrice}</b>
         <Stars />
         {metadata.wear && <h3>Color: {metadata.color}</h3>}
         <small>{metadata.description}</small>
