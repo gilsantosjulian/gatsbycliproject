@@ -29,7 +29,7 @@ export default function Cart() {
     const lineItems = cart.map(({ sku, quantity }) => ({ price: sku, quantity: quantity }))
     const { error } = await stripe.redirectToCheckout({
       lineItems: lineItems,
-      mode: 'payment',
+      mode: 'subscription',
       successUrl: process.env.SUCCESS_REDIRECT,
       cancelUrl: process.env.CANCEL_REDIRECT,
     })
